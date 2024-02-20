@@ -12,7 +12,7 @@ The location of your test executables (relative to the workspace folder or absol
 
 he extension is \*_pre-configured_ and it should find executables inside the working directory which match the following [_glob pattern_](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options):
 
-`"testMate.cpp.test.advancedExecutables": [ "{build,Build,BUILD,out,Out,OUT}/**/*{test,Test,TEST}*" ]`
+`"testMate.cpp.test.advancedExecutables": [ "{build,Build,BUILD,out,Out,OUT,bazel-bin}/**/*{test,Test,TEST}*" ]`
 
 This basically means executables inside the `build` and `out` directories (recursive `/**/`) which contain the `test` word in their name (including extensions).
 
@@ -25,7 +25,7 @@ The first example (`.vscode/settings.json` or hit _Ctr/Cmd + ,_):
 ```json
 "testMate.cpp.test.advancedExecutables": [
   {
-    "pattern": "{build,Build,BUILD,out,Out,OUT}/**/*{test,Test,TEST}*",
+    "pattern": "{build,Build,BUILD,out,Out,OUT,bazel-bin}/**/*{test,Test,TEST}*",
     "cwd": "${absDirpath}",
     "env": {
       "ExampleENV1": "You can use variables here too, like ${relPath}",
@@ -180,7 +180,7 @@ Example:
 "testMate.cpp.test.advancedExecutables": {
   "name": "${filename}",
   "description": "${relDirpath}/",
-  "pattern": "{build,Build,BUILD,out,Out,OUT}/**/*{test,Test,TEST}*",
+  "pattern": "{build,Build,BUILD,out,Out,OUT,bazel-bin}/**/*{test,Test,TEST}*",
   "cwd": "${absDirpath}",
   "env": {
     "ExampleENV1": "You can use variables here too, like ${absPath}",

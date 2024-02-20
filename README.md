@@ -45,7 +45,7 @@ The extension is **pre-configured** and it should find executables inside the wo
 which match the following [_glob pattern_](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options):
 
 ```
-{build,Build,BUILD,out,Out,OUT}/**/*{test,Test,TEST}*
+{build,Build,BUILD,out,Out,OUT,bazel-bin}/**/*{test,Test,TEST}*
 ```
 
 Not good enough for you?!: Edit your `.vscode/`[settings.json] file according to the [test.advancedExecutables]!
